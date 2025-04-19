@@ -3,6 +3,7 @@
     <h1>{{ message }}</h1>
     <h2> You click {{ count }} time{{ count != 1 ? 's' : '' }}</h2>
     <button @click="clickMeUp">Click Me</button>
+    <button @click="UnclickMeUp">Unclick Me</button>
   </div>
 </template>
 
@@ -16,8 +17,11 @@ export default {
   },
   methods : {
     clickMeUp(){
-      this.message = "You clicked so hard...!!!",
+      this.message = "You clicked!",
       this.count++
+    },
+    UnclickMeUp(){
+      this.count--;
     }
   }
 };
